@@ -43,13 +43,17 @@ Position.prototype.getCoord=function() {
   return [this.x,this.y];
 }
 
-Position.prototype.isSnakeHitsOnWall=function(){
-  return (this.x>=120 || this.y>=60);
+Position.prototype.isSnakeHitsOnLeftAndDownSide=function(){
+  return (this.x==numberOfCols || this.y==numberOfRows);
 }
 
-Position.prototype.isSnakeHitsOnWallOnAnotherSide=function(){
-  return (this.x<=-2 || this.y<=-2);
+Position.prototype.isSnakeHitsOnRightAndUpSide=function(){
+  return (this.x<0 || this.y<0);
 }
+
+// Position.prototype.isSnakeEatsItself=function(){
+//
+// }
 
 const generateRandomPosition=function(maxX,maxY) {
   let x=generateRandomNumberBetween(0,maxX);
