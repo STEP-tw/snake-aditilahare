@@ -47,6 +47,10 @@ Position.prototype.isSnakeHitsOnWall=function(){
   return (this.x>=120 || this.y>=60);
 }
 
+Position.prototype.isSnakeHitsOnWallOnAnotherSide=function(){
+  return (this.x<=-2 || this.y<=-2);
+}
+
 const generateRandomPosition=function(maxX,maxY) {
   let x=generateRandomNumberBetween(0,maxX);
   let y=generateRandomNumberBetween(0,maxY);

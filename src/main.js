@@ -18,7 +18,8 @@ const animateSnake=function() {
     createFood(numberOfRows,numberOfCols);
     drawFood(food);
   }
-  if(head.isSnakeHitsOnWall()){
+  if(head.isSnakeHitsOnWall()||head.isSnakeHitsOnWallOnAnotherSide()){
+    alert("Oh You Lost!!")
     snake.stopMovement();
   }
 }
