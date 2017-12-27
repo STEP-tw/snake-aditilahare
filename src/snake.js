@@ -8,6 +8,7 @@ Snake.prototype={
     return this.body;
   },
   getHead:function() {
+    // console.log(this.head);
     return this.head;
   },
   move:function() {
@@ -23,5 +24,8 @@ Snake.prototype={
   },
   turnRight:function() {
     this.head=this.head.turnRight();
+  },
+  stopMovement:function() {
+    this.head={x:"14",y:"10",direction:"east"};
   }
 }
