@@ -9,7 +9,7 @@ const animateSnake=function() {
   let oldHead=snake.getHead();
   let oldTail=snake.move();
   let head=snake.getHead();
-  let body=snake.getBody();
+  // let body=snake.getBody();
   paintBody(oldHead);
   unpaintSnake(oldTail);
   paintHead(head);
@@ -22,6 +22,10 @@ const animateSnake=function() {
     alert("Oh!! You Lost.")
     snake.stopMovement();
   }
+  // if(head.isSnakeEatsItself(body)){
+  //   alert("Oh!! You Lost.")
+  //   snake.stopMovement();
+  // }
 }
 
 const changeSnakeDirection=function(event) {

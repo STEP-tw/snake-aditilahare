@@ -51,7 +51,7 @@ Position.prototype.isSnakeHitsOnRightAndUpSide=function(){
   return (this.x<0 || this.y<0);
 }
 
-// Position.prototype.isSnakeEatsItself=function(){
+// Position.prototype.isSnakeEatsItself=function() {
 //
 // }
 
