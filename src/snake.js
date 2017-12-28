@@ -25,6 +25,6 @@ Snake.prototype={
     this.head=this.head.turnRight();
   },
   stopMovement:function() {
-    this.head=null;
+    clearInterval(animator);
   }
 }

@@ -9,7 +9,7 @@ const animateSnake=function() {
   let oldHead=snake.getHead();
   let oldTail=snake.move();
   let head=snake.getHead();
-  // let body=snake.getBody();
+  let body=snake.getBody();
   paintBody(oldHead);
   unpaintSnake(oldTail);
   paintHead(head);
@@ -18,14 +18,10 @@ const animateSnake=function() {
     createFood(numberOfRows,numberOfCols);
     drawFood(food);
   }
-  if(head.isSnakeHitsOnLeftAndDownSide()||head.isSnakeHitsOnRightAndUpSide()){
+  if(head.isSnakeHitsToTheWall()||head.isSnakeEatsToItself(body)){
     alert("Oh!! You Lost.")
     snake.stopMovement();
   }
-  // if(head.isSnakeEatsItself(body)){
-  //   alert("Oh!! You Lost.")
-  //   snake.stopMovement();
-  // }
 }
 
 const changeSnakeDirection=function(event) {
@@ -70,7 +66,7 @@ const startGame=function() {
   createFood(numberOfRows,numberOfCols);
   drawFood(food);
   addKeyListener();
-  animator=setInterval(animateSnake,140);
+  animator=setInterval(animateSnake,40);
 }
 
 window.onload=startGame;
