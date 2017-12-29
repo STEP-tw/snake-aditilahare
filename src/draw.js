@@ -14,7 +14,7 @@ const drawGrids=function(numberOfRows,numberOfCols) {
 const paintCell=function(pos,color) {
   let cell=document.getElementById(pos.getCoord().join("_"));
   if(cell)
-    cell.className=color;
+  cell.className=color;
 }
 
 const paintBody=function(pos) {

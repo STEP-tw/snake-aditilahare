@@ -18,23 +18,22 @@ const animateSnake=function() {
     createFood(numberOfRows,numberOfCols);
     drawFood(food);
   }
-  if(head.isSnakeHitsToTheWall()||head.isSnakeEatsToItself(body)){
-    alert("Oh!! You Lost.")
-    snake.stopMovement();
+  if(snake.hitsTheWall()||snake.eatsItself(body)){
+    stopGame();
   }
 }
 
 const changeSnakeDirection=function(event) {
   switch (event.code) {
     case "KeyA":
-      snake.turnLeft();
-      break;
+    snake.turnLeft();
+    break;
     case "KeyD":
-      snake.turnRight();
-      break;
+    snake.turnRight();
+    break;
     case "KeyC":
-      snake.grow();
-      break;
+    snake.grow();
+    break;
     default:
   }
 }
@@ -66,7 +65,17 @@ const startGame=function() {
   createFood(numberOfRows,numberOfCols);
   drawFood(food);
   addKeyListener();
-  animator=setInterval(animateSnake,40);
+  animator=setInterval(animateSnake,70);
+}
+
+const stopGame = function(){
+  clearInterval(animator);
+  document.getElementById("gameStatus").innerText = "GAME OVER!";
+  document.getElementById("restart").onclick = resetGame;
+}
+
+const resetGame = function(){
+  window.location.reload();
 }
 
 window.onload=startGame;

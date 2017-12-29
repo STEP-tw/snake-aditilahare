@@ -43,13 +43,6 @@ Position.prototype.getCoord=function() {
   return [this.x,this.y];
 }
 
-Position.prototype.isSnakeHitsToTheWall=function() {
-  return (this.x==(numberOfCols-1)||this.y==(numberOfRows-1)||this.x<0||this.y<0);
-}
-
-Position.prototype.isSnakeEatsToItself=function(body) {
-  return this.x==body.x || this.y==body.y;
-}
 
 const generateRandomPosition=function(maxX,maxY) {
   let x=generateRandomNumberBetween(0,maxX);
