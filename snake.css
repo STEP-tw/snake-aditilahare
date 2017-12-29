@@ -24,3 +24,14 @@
   background-color: blue;
   border-radius: 50%;
 }
+
+#gameStatus {
+  text-align: center;
+  font-size: 70px;
+}
+
+#restart {
+  margin-left: 700px;
+  font-size: 30px;
+  border-radius: 30px;
+}
